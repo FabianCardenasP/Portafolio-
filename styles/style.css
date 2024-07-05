@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {                                 /* este root es para declarar variables en solo CSS */
+    --color-primario: #000000;
+    --color-secundario: #f6f6f6;
+    --color-terciario: #22d4fd;
+    --color-hover: #272727;
+
+    --fuente-montserrat: "Montserrat", sans serif;
+    --fuente-Krona: "Krona One", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* height: 100vh;   el 100vh significa que va utilizar el 100% de la pantalla hacia lo alto y ancho*/
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+.header {
+    padding: 2% 0% 0% 15%;  /* separacion de la margen el primero es parte superior, segundo derecha, tercero inferior, cuerto izquierda */
+}
+
+.header__menu {
+    display: flex;      /* enlaces horizontales */
+    gap: 80px;          /* separacion del box */    
+}
+
+.header__menu_link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;      /*buscar como hacer el calculo de px a rem*/
+    font-weight: 600;       /* probar cambiando este 600 por cualquiero otro numero y determinar cual es el idooneo*/
+    color: var(--color-terciario);
+    text-decoration: none; 
+}
+
+.presentacion {
+    padding: 6% 15%;                /* se cambia margin por padding y se cambia 10% en la parte vertical por 6% */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentacion__contenido_titulo {
+    font-size: 2.25rem;             /*16 px es un rem */
+    font-family: var(--fuente-Krona);
+}
+
+.titulo-destaque {
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido_texto {
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces {
+    display: flex;
+    justify-content: space-between;             /* separacion entre los botones */ 
+    flex-direction: column; 
+    align-items: center;                        /* alinea los enlaces */
+    gap: 32px;                                  /* con esta linea es la separacion entre cada boton */
+}
+
+.presentacion__enlaces_subtitulo{
+    font-family: var(--fuente-Krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces_link {
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-montserrat);      /*tipo de letra */
+    font-size: 1.5rem;                            /* tamaño de letra */
+    font-weight: 600;
+    text-decoration: none;                      /*quita el subrayado del link */
+    color: var(--color-secundario);                           /*color de las letras */
+    border: 2px solid var(--color-terciario);                /* crea un borde solido de ancho 2pc */
+    display: flex;
+    justify-content: center;                    /* ordena al centro los botones */
+    gap: 10px;                                  /* separacion de los iconos con las letras */
+}
+
+.presentacion__enlaces_link:hover{
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen {
+    width: 50%;
+}
+
+.footer {
+    background-color: var(--color-terciario);                /* color de fondo de la caja de footer */
+    padding: 24px;                              /* este es el espaciado entre la caja(boton) y de las letras de su interior */
+    color: var(--color-primario);                           /* color de las letras */
+    text-align: center;                         /* alinea el texto al centro de la pantalla */
+    font-family: var(--fuente-montserrat);      /* tipo de letra */
+    font-size: 1.5rem;                            /* tamaño de letra */
+    font-weight: 400;                           /* reguralar de la fuente de la letra, va desde 100 hasta 1000 */
+}
+
+@media (max-width: 1200px) {        /*esto es para acomodar la paguina web a cualquier tipo de pantalla*/
+
+    .header {
+        padding: 10%;
+    }
+    .header__menu {
+        justify-content: center;
+    }
+    .presentacion {
+        flex-direction: column-reverse;
+        padding: 5%;                    /* jugar con la presentacion del tamaño de la paguina web en pantallas mas pequeñas*/
+    }
+    .presentacion__contenido {
+        width: auto;                    /* ideal poner siempre en @media width en AUTO */
+    }
+
+}
